@@ -1,0 +1,7 @@
+<% @flats.each do |flat| %>
+  <article class="mb-3">
+    <h2><a href="<%= flat_path(flat) %>"><%= flat.name %></a></h2>
+  </article>
+<% end %>
+<a class="btn btn-primary" href="/flats/new">New flat</a>
+
