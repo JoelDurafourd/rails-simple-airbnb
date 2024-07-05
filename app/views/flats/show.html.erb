@@ -1,9 +1,19 @@
-<h1>name: <%= @flat.name %></h1>
-<h2>address: <%= @flat.address %></h2>
-<h2>description: <%= @flat.description %></h2>
-<h2>price per night: <%= @flat.price_per_night %></h2>
-<h2>number of guests: <%= @flat.number_of_guests %></h2>
+<img src="" alt="">
 
-<%= link_to "Back to flats", "/flats", class: "btn btn-primary"%>
-<%= link_to "edit", edit_flat_path(@flat), class: "btn btn-primary" %>
-<%= link_to "DESTROY THIS FLAT", flat_path(@flat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>
+<div class="card-trip">
+  <img src="https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/advisor/wp-content/uploads/2021/08/download-7.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= @flat.name %></h2>
+      <p><%= @flat.address %></p>
+      <p><%= @flat.description %></p>
+      <p>Number of Guests: <%= @flat.number_of_guests %></p>
+    </div>
+    <h2 class="card-trip-pricing">$<%= @flat.price_per_night %></h2>
+  </div>
+      <div>
+    <%= link_to "Back to flats", "/flats", class: "btn btn-primary"%>
+    <%= link_to "Edit this flat", edit_flat_path(@flat), class: "btn btn-primary" %>
+    <%= link_to "DESTROY THIS FLAT", flat_path(@flat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>
+    </div>
+</div>

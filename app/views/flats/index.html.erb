@@ -1,20 +1,10 @@
-<div class="row justify-content-center">
-  <div class="col-sm-8 my-3">
-    <%= form_with url: flats_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Type a keyword"
-        %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
-
 <% @flats.each do |flat| %>
-  <article class="mb-3">
-    <h2><a href="<%= flat_path(flat) %>"><%= flat.name %></a></h2>
-  </article>
+<div class="wrapper">
+  <h2><a href="<%= flat_path(flat) %>"><%= flat.name %></a></h2>
+  <div class="image i1"></div>
+  <div class="details"><h1><em><%= flat.address %></em></h1>
+  <h3><%= flat.description.truncate(50) %>...</h3>
+  <p>Number of Guests: <%= flat.number_of_guests %></p></div>
+  <h2>$<%= flat.price_per_night %></h2>
+</div>
 <% end %>
-<a class="btn btn-primary" href="/flats/new">New flat</a>
-<%= link_to "Back to Flats", "/flats", class: "btn btn-primary"%>
